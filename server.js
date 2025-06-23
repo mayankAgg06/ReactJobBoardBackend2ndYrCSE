@@ -23,6 +23,9 @@ import path from 'path';
 import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js';
 import { authenticateUser } from './middleware/authMiddleware.js';
 
+import cors from 'cors';
+app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
+
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
   api_key: process.env.CLOUD_API_KEY,
